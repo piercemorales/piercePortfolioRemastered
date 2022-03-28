@@ -1,0 +1,49 @@
+.footer{
+  background-image: url(../assets/footerBackground.png);
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    font-family: $gothicFont;
+    font-weight: 200;
+    font-size: 1rem;
+    color: $thirdColor;
+    text-transform: uppercase;
+    padding: 50px 0px;
+    @include mqTablet {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    @include mobile {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+}
+
+.socialList {
+  display: flex;
+
+  @include mqTablet {
+        margin: 20px 0px;
+      }
+
+  &__item {
+    margin: 0 20px;
+    &:nth-of-type(3) {
+      margin-right: 0px;
+    }
+    @include mqTablet {
+      &:nth-of-type(3) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__link {
+    color: $thirdColor;
+    transition: $transition;
+    &:hover,&:focus {
+      color:darken($thirdColor, 35%);
+    }
+  }
+}

@@ -1,0 +1,178 @@
+.portfolio {
+  font-family: $secondFont;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+	overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+.portfolio__link {
+	position: relative;
+  font-family: $secondFont;
+  font-weight: 200;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  transition: $transition;
+      &:hover::before,
+      &:focus::before {
+        opacity: 0.4;
+        height: 5px;
+        }
+      &::before {
+        content:'';
+        position: absolute;
+        width:100%;
+        height: 10px;
+        bottom: -2px;
+        left: 5px;
+        display:inline-block;
+        opacity: 0.3;
+        transition: $transition;
+        
+      }
+}
+
+.portfolio__1, .portfolio__2, .portfolio__3, .portfolio__4 {
+
+  display: flex;
+  flex-direction: row;
+  padding: 100px 0px;
+    @include mqTablet {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  @include mobile {
+    padding: 50px 0px;
+  }
+  .wrapper {
+    width: 45%;
+    @include mqTablet {
+      width: 80%;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+  .imageContainer {
+    width: 55%;
+    @include mqTablet {
+      width: 80%;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.portfolio__1 {
+  padding-top: 0px;
+}
+.portfolio__1, .portfolio__3 {
+  color: $secondColor;
+  .portfolio__link {
+    color:$secondColor;
+    margin-right: 50px;
+    @include mqTablet {
+      margin: 0px 20px;
+    }
+    &:hover,&:focus {
+      color: lighten($secondColor, 25%);
+    }
+    &:hover::before,
+    &:focus::before {
+        opacity: 0.4;
+        height: 5px;
+        left: -10px;
+        }
+    &::before {
+      content:'';
+      position: absolute;
+      width:100%;
+      height: 10px;
+      bottom: -2px;
+      left: 5px;
+      display:inline-block;
+      opacity: 0.3;
+      background: $secondColor;
+      transition: $transition;
+      }
+  }
+}
+
+
+.portfolio__2, .portfolio__4 {
+  color: $fourthColor;
+  text-align: right;
+
+  @include mqTablet {
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+  .portfolio__link {
+    color:$fourthColor;
+    margin-left: 50px;
+    @include mqTablet {
+      margin: 0px 20px;
+    }
+    &:hover,&:focus {
+      color: lighten($fourthColor, 10%);
+    }
+    &:hover::before,
+    &:focus::before {
+      opacity: 0.4;
+      height: 5px;
+      left: 10px;
+        }
+      &::before {
+        content:'';
+        position: absolute;
+        width:100%;
+        height: 10px;
+        bottom: -2px;
+        left: -5px;
+        display:inline-block;
+        opacity: 0.3;
+        background: $fourthColor;
+        transition: $transition;
+      }
+  }
+}
+
+.choice, .neuse, .dine, .restaurant {
+  
+
+  &__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 50px;
+
+    h3, h4 {
+      text-transform: uppercase;
+    }
+    
+    h3 {
+      font-size: 1.7rem;
+      @include mqTablet {
+        margin: 20px 0px;
+      }
+    }
+    h4 {
+      font-weight: normal;
+    }
+    p {
+      @include mqTablet {
+        line-height: 2rem;
+        margin: 20px 0px;
+      }
+    }
+  }
+}
+
